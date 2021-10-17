@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="container mt-4 align-content-center">
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <form id="frm1" class="card bg-dark text-light" action="">
+                    <b class="card-header"><h3>Konversi Nilai</h3></b>
+                    <div class="card-body">
+                        <p>Nilai <input id="in" type="text" class="form-control" name="fname"></p>
+                        <p>Output <input id="rs" type="text" class="form-control" name="hasil"></p>
+                        <input type="button " class="btn btn-primary" onclick="konversi()" value="Submit">
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    
+    <script>
+        function konversi() {
+            value =  document.getElementById("in").value;
+            arr = ['A','AB','B','BC','C','D','E'];
+            res = '';
+            if(value > 100){
+                res = 'max 100';
+            }
+            else if(value <= 100){
+                res = arr[0];
+                if(value <= 80  ){
+                    res = arr[1];
+                    if(value <= 70  ){
+                        res = arr[2];
+                        if(value <= 65  ){
+                            res = arr[3];
+                            if(value <= 60  ){
+                                res = arr[4];
+                                if(value <= 55  ){
+                                    res = arr[5];
+                                    if(value <= 40  ){
+                                        res = arr[6];
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+            
+            document.querySelector("#rs").value = res;
+        }
+    </script>
+</body>
+</html>
